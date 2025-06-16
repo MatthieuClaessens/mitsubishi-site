@@ -1,0 +1,21 @@
+let index = 0;
+const items = document.querySelectorAll('.slider-item');
+const totalItems = items.length;
+
+function nextSlide() {
+index = (index + 1) % totalItems;
+updateSliderPosition();
+}
+
+function prevSlide() {
+index = (index - 1 + totalItems) % totalItems;
+updateSliderPosition();
+}
+
+function updateSliderPosition() {
+const offset = -index * 100;  // Déplace en fonction de l'index
+document.querySelector('.slider').style.transform = `translateX(${offset}%)`;
+}
+
+// Appel à la fonction pour faire tourner automatiquement
+setInterval(nextSlide, 3000);  // Change toutes les 3 secondes

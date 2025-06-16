@@ -1,0 +1,1 @@
+import '../css/style.css';  // Assure-toi que le chemin du fichier CSS est correct

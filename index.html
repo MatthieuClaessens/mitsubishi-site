@@ -10,15 +10,15 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap" rel="stylesheet">
   <title>Mitsubishi</title>
+  <script type="module" src="js/jquery-3.7.1.min.js" crossorigin="anonymous" defer></script>
   <script type="module" src="js/main.js" defer></script>
-  <script src="js/jquery-3.7.1.min.js" crossorigin="anonymous" defer></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
-  <script src="https://kit.fontawesome.com/ea9b6cde68.js" crossorigin="anonymous" defer></script>
-  <script src="js/scroll.js" defer></script>
-  <script src="js/nav.js" defer></script>
-  <script src="js/slider.js" defer></script>
-  <script src="js/slide.js" defer></script>
-  <script src="js/carviewer.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
+  <script type="module" src="https://kit.fontawesome.com/ea9b6cde68.js" crossorigin="anonymous" defer></script>
+  <script type="module" src="js/scroll.js" defer></script>
+  <script type="module" src="js/nav.js" defer></script>
+  <script type="module" src="js/slide.js" defer></script>
+  <script type="module" src="js/carviewer.js" defer></script>
 </head>
 
 <body class="bg-white">
@@ -65,7 +65,7 @@
     </div>
   </header>
   <main>
-    <section>
+    <section id="intro-video">
       <!-- Conteneur de la vidéo avec overlay + texte -->
       <div class="relative">
         <!-- Vidéo -->
@@ -81,150 +81,176 @@
           <h1 class="text-white text-8xl inline font-[SourceSansProLight]">Lancer Evolution </h1>
           <h1 class="text-red-600 text-8xl inline font-[SourceSansProLight]">X</h1><br>
           <h1 class="text-gray-100 text-5xl inline uppercase font-[SourceSansProLight]">&nbsp;L'essence pure de la
-            <!-- L'essence pure de la <span class="text-red-600 text-4xl">performance</span> --><span id="slider"
-              class="text-red-500 text-4xl"><span>
+            <span id="slider" class="text-red-500 text-5xl"></span>
+          </h1>
         </div>
       </div>
       </div>
       </div>
     </section>
-    <section>
-      <!-- Zone contenant le texte avec fond et effet -->
-      <div class="relative w-full h-[350px] bg-cover bg-no-repeat bg-center bg-[url('/img/bg1.jpg')]">
-        <!-- Overlay semi-transparent -->
-        <div class="absolute top-0 left-0 w-full h-full bg-[#720101] bg-opacity-70 z-10"></div>
-
-        <!-- Contenu -->
+    <section id="intro-section">
+      <div class="relative w-full h-[350px] bg-cover bg-no-repeat bg-center bg-[url('/img/bg1.jpg')] z-10">
+        <div class="absolute top-0 left-0 w-full h-full bg-[#5e0000] bg-opacity-70 z-10"></div>
         <div class="relative z-20 flex justify-center items-center h-full px-6 py-16">
-          <h2
-            class="text-white font-bold uppercase text-2xl md:text-3xl lg:text-3xl leading-tight text-center max-w-[75%]">
+          <h2 class="text-white font-medium text-2xl md:text-3xl lg:text-3xl leading-tight text-center max-w-[75%]">
             Aujourd'hui encore, les Mitsubishi Lancer Evolution – retirées de la gamme Mitsubishi en
             <span class="text-red-600">2015</span> –
             <br>continuent de captiver l'attention des passionnés d'automobile du monde entier.
           </h2>
         </div>
       </div>
+    </section>
 
-      <section class="w-full py-8 bg-cover bg-center bg-no-repeat relative bg-[url('/img/bg2.jpg')]">
-        <div class="relative w-full overflow-hidden max-w-7xl mx-auto rounded-lg">
-          <!-- Slides Container -->
-          <div id="carousel-slides" class="flex transition-transform duration-500 ease-in-out"
-            style="transform: translateX(0%)">
+    <!-- Slider horizontal simulé -->
+    <section class="horizontal-wrapper h-screen overflow-hidden relative">
+      <div id="horizontal-scroll" class="flex w-[400vw] h-full"> <!-- <- Conteneur principal qui scroll -->
 
-            <!-- SLIDE 1 - Ton contenu -->
-            <div class="min-w-full h-[500px] flex flex-col md:flex-row rounded-lg overflow-hidden">
-              <!-- Image positionnée à gauche -->
-              <div class="w-full md:w-1/3">
-                <img class="w-full h-full object-cover mr-4" src="img/lancer_1.png" alt="Mitsubishi Lancer">
-              </div>
+        <!-- Slide 1 -->
+        <div class="relative w-screen h-full flex items-center justify-start px-16 bg-white">
+          <!-- Bordure haut -->
+          <div class="absolute top-0 left-0 w-full h-[20px] bg-black opacity-30 z-10"></div>
 
-              <!-- Contenu texte à droite -->
-              <div class="flex flex-col justify-center p-6 leading-normal text-[#3d3d3d] w-full md:w-2/3">
-                <h3 class="mb-2 text-2xl font-bold tracking-tight font-[SourceSansPro]">Éprouvée par le temps. Éprouvée
-                  sur la route.
-                  La Mitsubishi Lancer, nommée d'après un soldat de la cavalerie de l'époque chevaleresque européenne, a
-                  fait ses débuts sur la scène internationale en <span class="text-[#c20000]">1973.</span></h3>
-                <p class="mb-3 text-[23px] font-normal font-[SourceSansPro]">
-                  Conçue pour une traînée aérodynamique supérieure et dotée d'un châssis monocoque robuste pour des
-                  performances accrues, la toute
-                  première Lancer était équipée de moteurs utilisant la technologie Mitsubishi Clean Air.
-                  <br><br>
-                  Elle fut le premier modèle de <span class="text-[#c20000]">1973</span> à être certifié comme étant
-                  doté d'un moteur à faible pollution par l'Agence
-                  américaine de protection de l'environnement. Après près de trois décennies de succès en Europe et en
-                  Asie, la Lancer a été lancée aux États-Unis en <span class="text-[#c20000]">2001</span>, propulsée par
-                  un moteur <span class="text-[#c20000]">2.0</span> litres développant <span
-                    class="text-[#c20000]">120ch</span> et <span class="text-[#c20000]">130</span> lb-pi de couple.
-                </p>
-              </div>
-            </div>
+          <!-- Bordure bas -->
+          <div class="absolute bottom-0 left-0 w-full h-[20px] bg-black opacity-30 z-10"></div>
+          <img class="w-[800px] h-[800px] object-cover mr-12" src="img/lancer_1.png" alt="Mitsubishi Lancer">
 
-            <!-- SLIDE 2 (Exemple vide pour suite) -->
-            <div class="min-w-full flex flex-col items-center justify-center bg-white/90 p-8">
-              <h2 class="text-2xl font-bold text-center">Slide 2</h2>
-              <p class="text-center mt-2">Contenu futur ici</p>
-            </div>
-          </div>
-
-          <!-- Indicateurs -->
-          <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex gap-2">
-            <button onclick="goToSlide(0)" class="w-3 h-3 bg-gray-400 rounded-full"></button>
-            <button onclick="goToSlide(1)" class="w-3 h-3 bg-gray-400 rounded-full"></button>
-            <button onclick="goToSlide(2)" class="w-3 h-3 bg-gray-400 rounded-full"></button>
-            <button onclick="goToSlide(3)" class="w-3 h-3 bg-gray-400 rounded-full"></button>
+          <!-- Texte légèrement remonté -->
+          <div class="flex flex-col max-w-[1200px] justify-start h-[600px]">
+            <h3 class="mb-8 text-5xl tracking-tight font-bold uppercase font-[SourceSansPro] text-mask">
+              Éprouvée par le temps. Éprouvée sur la route.
+            </h3>
+            <h2 class="mb-2 mt-4 text-3xl font-bold tracking-tight font-[SourceSansPro]">Éprouvée par le temps. Éprouvée
+              sur la route.
+              La Mitsubishi Lancer, nommée d'après un soldat de la cavalerie de l'époque chevaleresque européenne, a
+              fait ses débuts sur la scène internationale en <span class="text-[#c20000]">1973.</span></h2>
+            <p class="mb-3 text-2xl font-normal font-[SourceSansPro]">
+              Conçue pour une traînée aérodynamique supérieure et dotée d'un châssis monocoque robuste pour des
+              performances accrues, la toute
+              première Lancer était équipée de moteurs utilisant la technologie Mitsubishi Clean Air.
+              <br><br>
+              Elle fut le premier modèle de <span class="text-[#c20000]">1973</span> à être certifié comme étant
+              doté d'un moteur à faible pollution par l'Agence
+              américaine de protection de l'environnement. Après près de trois décennies de succès en Europe et en
+              Asie, la Lancer a été lancée aux États-Unis en <span class="text-[#c20000]">2001</span>, propulsée par
+              un moteur <span class="text-[#c20000]">2.0</span> litres développant <span
+                class="text-[#c20000]">120ch</span> et <span class="text-[#c20000]">130</span> lb-pi de couple.
           </div>
         </div>
-      </section>
 
-      <section class="bg-white">
-        <div class="container py-12 mx-auto px-4">
-          <h2 class="text-5xl text-black text-center mb-8 uppercase font-[SourceSansPro] font-bold">Fiche Technique</h2>
-          <div class="flex items-center justify-center max-w-5xl mx-auto h-[30rem] space-x-8">
-            <!-- Texte à gauche -->
-            <div class="text-white bg-black p-8 rounded-[10px]">
-              <div class="flex items-center">
-                <i class="fa-solid fa-oil-can"></i>
-                <h2 class="text-xl font-[Everett-Light] ml-2 text-red-600 font-bold">2.0 MIVEC</h2>
-                <h2 class="text-white text-xl font-[Everett-Light]">&nbsp;Turbo</h2>
-              </div>
-              <h2 class="text-xl font-[Everett-Light]">295 (217) ch (kW) | <span class="text-red-600">Essence</span>
-              </h2>
-              <br>
-              <div class="flex items-center">
-                <i class="fa-solid fa-road"></i>
-                <h2 class="text-xl font-[Everett-Light]">&nbsp;&nbsp;Transmission 4x2</h2>
+        <!-- Slide 2 -->
+        <div
+          class="relative w-screen h-full flex items-center justify-center px-16 bg-cover bg-no-repeat bg-[url('img/Mitsubishi-Lancer-Hero-d.webp')]">
+          <div class="absolute inset-0 bg-black/75 z-10"></div>
+          <div class="absolute top-0 left-0 w-full h-[20px] bg-black opacity-30 z-10"></div>
+          <div class="absolute bottom-0 left-0 w-full h-[20px] bg-black opacity-30"></div>
+          <div class="max-w-[1200px] justify-start h-[600px] z-10">
+            <h3 class="mb-8 text-5xl tracking-tight font-bold uppercase font-[SourceSansPro] text-center text-white">
+              <span class="text-[#c20000]">Aujourd'hui,</span> l'héritage de performance de la Lancer continue de
+              perdurer <br>avec les crossovers
+              polyvalents et les citadines efficaces de Mitsubishi.
+            </h3>
+            <div class="text-white">
+              <h2 class="mb-2 text-3xl font-bold tracking-tight font-[SourceSansPro]">Éprouvée par le temps. Éprouvée
+                sur la route.
+                La Mitsubishi Lancer, nommée d'après un soldat de la cavalerie de l'époque chevaleresque européenne, a
+                fait ses débuts sur la scène internationale en <span class="text-[#c20000]">1973.</span></h2>
+              <p class="mb-3 text-2xl font-normal font-[SourceSansPro]">
+                Au fil des ans, la popularité de la Lancer a grandi avec l'ajout de finitions et de modèles plus
+                puissants, tels que la Lancer GT, la Lancer Ralliart,
+                la Lancer Sportback LS et la Lancer Sportback Ralliart, comblant ainsi l'écart entre le modèle de base
+                de la Lancer et sa grande sœur hautes
+                performances : la Lancer Evolution.
+                <br><br> Lentement, cependant, la demande du marché s'est orientée vers des véhicules plus polyvalents
+                et plus spacieux, et des voitures à l'empreinte environnementale plus réduite. En 2017, Mitsubishi a
+                décidé d'arrêter
+                la production de la Lancer pour se concentrer sur les crossovers et les SUV, ainsi que sur les
+                motorisations électriques et hybrides.
                 <br>
-              </div>
-              <div class="flex items-center">
-                <i class="fa-solid fa-gears"></i>
-                <h2 class="text-xl font-[Everett-Light]">&nbsp;&nbsp;Boite manuelle à <span class="text-red-600">5
-                    rapports</span></h2>
-              </div>
-              <br>
-              <div class="flex items-center">
-                <i class="fa-solid fa-car"></i>
-                <h2 class="text-xl font-[Everett-Light]">&nbsp;&nbsp;Cylindrée 1998 <span
-                    class="font-bold text-red-600">cc</span></h2>
-              </div>
-              <!-- Rectangle rouge sous le texte -->
-              <div
-                class="mt-4 bg-[url('img/bgbutton.jpg')] w-[300px] h-[70px] bg-cover bg-center bg-no-repeat;              ">
-                <div class="bg-[#8e0000] bg-opacity-70 w-[300px] h-[70px]">
-                  <h2 class="text-center text-2xl font-[Everett-Regular] uppercase"> Accéleration</h2>
-                  <h2 class="text-center text-2xl font-[SourceSansPro]"> 0 - 100 km/h, 5.4s</h2>
-                </div>
-              </div>
-            </div>
-
-            <!-- Conteneur d'image bien centré -->
-            <div id="car-viewer" class="relative w-1/2 h-full flex justify-center items-center">
-              <div id="car-image-container" class="relative flex items-center justify-center w-full h-full">
-                <div class="relative scale-110 origin-center">
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="flex justify-center mt-4 space-x-2">
-            <div id="car-indicators" class="flex justify-center mt-4 space-x-2">
-              <!-- Vos indicateurs -->
+                <button
+                  class="bg-[#ed0000] hover:bg-[#a80202] text-white font-regular uppercase py-2 px-4 rounded font-[SourceSansPro]">
+                  Plus d'informations
+                </button>
             </div>
           </div>
         </div>
-      </section>
-      <!-- Rectangle rouge -->
-      <div class="bg-white h-1 w-full"></div>
-      <!-- Conteneur relatif pour ancrer le rectangle -->
-      <div class="relative"> <!-- h-0 empêche le conteneur de prendre de l'espace -->
-        <!-- Rectangle rouge chevauchant -->
+
+        <!-- Slide 3 -->
+        <div class="w-screen h-full flex items-center justify-center bg-gray-700">
+          <p class="text-3xl max-w-2xl px-8 text-center text-white">Avec ses 4 roues motrices et son turbo agressif,
+            elle rivalisait avec les meilleures sportives.</p>
+        </div>
+
+        <!-- Slide 4 -->
+        <div class="w-screen h-full flex items-center justify-center bg-gray-600">
+          <p class="text-3xl max-w-2xl px-8 text-center text-white">La production s’est arrêtée en 2015, mais la
+            légende continue dans le cœur des fans.</p>
+        </div>
+
       </div>
-      <!-- Votre séparateur gris existant -->
-  </main>
-  </section>
-  <footer class="footer bg-black text-white py-6">
-    <div class="container mx-auto text-center">
-      <p class="text-lg">© 2025 - Projet localhost - Matthieu CLAESSENS</p>
-    </div>
-  </footer>
+    </section>
+
+    <!-- Bloc 2 : Scroll vertical normal -->
+    <section id="fiche-technique" class="bg-white">
+      <div class="container py-12 mx-auto px-4">
+        <h2 class="text-5xl text-black text-center mb-8 uppercase font-[SourceSansPro] font-bold">Fiche Technique</h2>
+
+        <div class="flex items-center justify-center max-w-5xl mx-auto h-[30rem] space-x-8">
+          <!-- Colonne gauche -->
+          <div class="text-white bg-black p-8 rounded-[10px]">
+            <!-- Contenu moteur -->
+            <div class="flex items-center">
+              <i class="fa-solid fa-oil-can"></i>
+              <h2 class="text-xl font-[Everett-Light] ml-2 text-red-600 font-bold">2.0 MIVEC</h2>
+              <h2 class="text-white text-xl font-[Everett-Light]">&nbsp;Turbo</h2>
+            </div>
+            <h2 class="text-xl font-[Everett-Light]">295 (217) ch (kW) | <span class="text-red-600">Essence</span>
+            </h2>
+            <br>
+            <div class="flex items-center">
+              <i class="fa-solid fa-road"></i>
+              <h2 class="text-xl font-[Everett-Light]">&nbsp;&nbsp;Transmission 4x2</h2>
+            </div>
+            <div class="flex items-center">
+              <i class="fa-solid fa-gears"></i>
+              <h2 class="text-xl font-[Everett-Light]">&nbsp;&nbsp;Boite manuelle à <span class="text-red-600">5
+                  rapports</span></h2>
+            </div>
+            <br>
+            <div class="flex items-center">
+              <i class="fa-solid fa-car"></i>
+              <h2 class="text-xl font-[Everett-Light]">&nbsp;&nbsp;Cylindrée 1998 <span
+                  class="font-bold text-red-600">cc</span></h2>
+            </div>
+            <!-- Accélération -->
+            <div class="mt-4 bg-[url('img/bgbutton.jpg')] w-[300px] h-[70px] bg-cover bg-center bg-no-repeat">
+              <div class="bg-[#8e0000] bg-opacity-70 w-full h-full">
+                <h2 class="text-center text-2xl font-[Everett-Regular] uppercase">Accéleration</h2>
+                <h2 class="text-center text-2xl font-[SourceSansPro]">0 - 100 km/h, 5.4s</h2>
+              </div>
+            </div>
+          </div>
+
+          <div id="car-viewer" class="relative w-1/2 h-full flex justify-center items-center">
+            <div id="car-image-container" class="relative flex items-center justify-center w-full h-full">
+              <div class="relative scale-110 origin-center">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Indicateurs -->
+        <div class="flex justify-center mt-4 space-x-2">
+          <div id="car-indicators" class="flex justify-center space-x-2">
+            <!-- Indicateurs dynamiques -->
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer class="footer bg-black text-white py-6">
+      <div class="container mx-auto text-center">
+        <p class="text-lg">© 2025 - Projet localhost - Matthieu CLAESSENS</p>
+      </div>
+    </footer>
 </body>
 
 </html>

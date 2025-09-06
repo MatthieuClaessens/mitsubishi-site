@@ -29,6 +29,19 @@
   src: url('/font/UniversLR.otf') format('opentype'),
 }
 
+#intro-video {
+  overflow: hidden;
+}
+
+#intro-video video {
+  will-change: transform, opacity; /* Optimisation des performances */
+}
+
+#intro-text {
+  transition: transform 0.3s ease;
+  transform-origin: left bottom;
+}
+
 /* Viewer 360° */
 #car-viewer {
   position: relative;
@@ -102,4 +115,31 @@
   100% {
       transform: translate3d(0, 0, 1px) rotate(360deg);
   }
+}
+
+.mask1 {
+  -webkit-mask-image: url('w3logo.png');
+  mask-image: url('w3logo.png');
+  mask-repeat: no-repeat;
+  mask-size: contain;
+  mask-position: center;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-size: contain;
+  -webkit-mask-position: center;
+}
+
+.text-mask {
+  font-size: 6rem;
+  font-weight: bold;
+  background: url('/img/japan.jpg') no-repeat center / cover;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-mask2 {
+  font-size: 6rem;
+  font-weight: bold;
+  background: url('/img/japan2.jpg') no-repeat center / cover;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
